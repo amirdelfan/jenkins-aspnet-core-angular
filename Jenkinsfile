@@ -10,10 +10,17 @@ pipeline {
   }
 
   stages {
-    stage('npm install and build') {
+    stage('Build') {
       steps {
-        dir('AngularCoreJenkins/ClientApp')
+          dir('AngularCoreJenkins')
           {
+            // build the asp.net core application
+            sh 'dotnet build'
+          }
+
+          dir('AngularCoreJenkins/ClientApp')
+          {
+            // build the angular application
             sh '''
               npm install -g @angular/cli
               npm install
