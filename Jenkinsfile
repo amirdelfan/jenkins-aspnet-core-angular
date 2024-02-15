@@ -12,10 +12,12 @@ pipeline {
   stages {
     stage('npm install and build') {
       steps {
-        dir('/AngularCoreJenkins/ClientApp')
+        dir('AngularCoreJenkins/ClientApp')
           {
             sh '''
+              npm install -g @angular/cli
               npm install
+              ng build -c production
             '''
           }
       }
