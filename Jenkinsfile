@@ -25,28 +25,25 @@ pipeline {
                 }
             }
         }
-    }
-
-    stage('Test')
-    {
-      steps {
-        dir('AngularCoreJenkins')
-          {
-              // run the unit tests for the asp.net core application
-              sh 'dotnet test'
-              // run the unit tests for the angular application
-              sh 'ng test --watch=false'
+        stage('Test') {
+          steps {
+            dir('AngularCoreJenkins')
+              {
+                  // run the unit tests for the asp.net core application
+                  sh 'dotnet test'
+                  // run the unit tests for the angular application
+                  sh 'ng test --watch=false'
+              }
+            }
+        }
+        stage('Deploy') {
+          steps {
+            dir('AngularCoreJenkins')
+              {
+                  // deploy the asp.net core application to Azure Web App service
+                  sh 'dotnet publish -c Release -o publish'
+              }
           }
         }
-    }
-
-    stage('Deploy') {
-      steps {
-         dir('AngularCoreJenkins')
-          {
-              // deploy the asp.net core application to Azure Web App service
-              sh 'dotnet publish -c Release -o publish'
-          }
-      }
     }
 }
