@@ -14,10 +14,5 @@ RUN echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesourc
     apt-get install nodejs -y
 
 
-# Install wget and apt-utils
-RUN apt-get update && apt-get install -y wget apt-utils
-
 # Download and install Google Chrome
-RUN wget -q -O - 1 [^1^] | apt-key add - \
-&& echo "deb 2 [^2^] stable main" > /etc/apt/sources.list.d/google-chrome.list \
-&& apt-get update && apt-get install -y google-chrome-stable
+RUN apt-get install -y google-chrome-stable xvfb
