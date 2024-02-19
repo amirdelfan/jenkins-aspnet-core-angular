@@ -31,8 +31,12 @@ pipeline {
               {
                   // run the unit tests for the asp.net core application
                   sh 'dotnet test'
+                  
+              }
+              dir('AngularCoreJenkins/ClientApp')
+              {
                   // run the unit tests for the angular application
-                  sh 'ng test --watch=false'
+                sh 'ng test --watch=false'
               }
             }
         }
