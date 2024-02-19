@@ -12,11 +12,6 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                dir('AngularCoreJenkins')
-                {
-                    // build the asp.net core application
-                    sh 'dotnet build'
-                }
                 dir('AngularCoreJenkins/ClientApp')
                 {
                     // build the angular application
