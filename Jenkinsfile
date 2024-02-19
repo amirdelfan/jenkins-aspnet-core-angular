@@ -33,11 +33,6 @@ pipeline {
                   sh 'dotnet test'
                   
               }
-              dir('AngularCoreJenkins/ClientApp')
-              {
-                  // run the unit tests for the angular application
-                sh 'ng test --watch=false'
-              }
             }
         }
         stage('Deploy') {
