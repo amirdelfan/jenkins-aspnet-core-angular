@@ -1,12 +1,4 @@
 pipeline {
-    agent {
-        // dockerfile {
-        //     filename 'Dockerfile'
-        //     args '-u 0:0'
-        // }
-         docker { image 'angular_aspcore' }
-    }
-
     stages {
         stage('Build') {
             steps {
