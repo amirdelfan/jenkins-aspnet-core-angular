@@ -1,4 +1,9 @@
 pipeline {
+    agent {
+        node {
+            label "angular_aspcore" 
+        }
+    }
     stages {
         stage('Build') {
             steps {
