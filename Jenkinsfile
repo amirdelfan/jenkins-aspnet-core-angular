@@ -1,10 +1,10 @@
 pipeline {
-    agent {
-        dockerfile {
-            filename 'Dockerfile'
-            args '-u 0:0'
-        }
-    }
+    // agent {
+    //     dockerfile {
+    //         filename 'Dockerfile'
+    //         args '-u 0:0'
+    //     }
+    // }
 
     stages {
         stage('Build') {
