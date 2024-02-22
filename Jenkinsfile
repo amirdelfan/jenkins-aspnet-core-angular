@@ -1,7 +1,7 @@
 pipeline {
     agent {
         node {
-            label "angular_aspcore" 
+            label "docker_angular_aspcore_agent" 
         }
     }
     stages {
